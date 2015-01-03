@@ -11,6 +11,7 @@ public class calculator {
 		System.out.println(num1-num2);
 		System.out.println(num1/num2);
 		System.out.println(num1*num2);
+		System.out.println("자동완성기능 쵝오");
 		
 	
 	}
