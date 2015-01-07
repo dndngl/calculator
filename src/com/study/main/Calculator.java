@@ -1,53 +1,91 @@
 package com.study.main;
+
 import java.util.Scanner;
 
 public class Calculator {
 
-	public static void main(String[] args) {
-		
-		System.out.println("연산자를 선택하세요.");
-		System.out.println("더하기: 1 입력, 빼기: 2 입력, 곱하기: 3 입력, 나누기: 4 입력, 16진수로변환: 5 입력");
-		System.out.print(">>");
+	
 
-		Scanner scan = new Scanner(System.in);
-		String operator = scan.next();
-		
-		System.out.println("피연산자를 입력하세요.");
-		
-		Calculate cal = new Calculate();
+	static int result;
+
+	public int add(int num1,int num2) {
 
 		
+		result = num1 + num2;
+		return result;
+	}
 
-		int result = 0;
+	public int sub(int num1,int num2) {
 
-		if (operator.equals("1")) {
-			result = cal.add();
-			System.out.println(result);
+		result = num1 - num2;
+		return result;
+	}
+
+	public int mul(int num1,int num2) {
+
+		result = num1 * num2;
+		return result;
+	}
+
+	public int div(int num1,int num2) {
+
+		result = num1 - num2;
+		return result;
+	}
+
+	public String toHex(int decNumber) {
+
+
+		char tempHexNumber[] = new char[50];
+		int qoutient = 1;
+		char remainder[] = new char[50];
+		int i = 0;
+		int j = 0;
+
+		for(;qoutient > 0;i++) {
+			qoutient = decNumber / 16;
+			remainder[i] =  Character.forDigit(decNumber % 16, 10);
+
+			switch (remainder[i]) {
+
+			case 10 : 
+				remainder[i] = 'A'; 
+				break;
+			case 11:
+				remainder[i] = 'B';
+				break;
+			case 12:
+				remainder[i] = 'C';
+				break;
+			case 13:
+				remainder[i] = 'D';
+				break;
+			case 14:
+				remainder[i] = 'E';
+				break;
+			case 15:
+				remainder[i] = 'F';
+				break;
+			default:
+				break;
+			}
+			
+			decNumber=qoutient;
+
 		}
 
-		if (operator.equals("2")) {
-			result = cal.sub();
-			System.out.println(result);
+		i = i - 1;
+
+		while (i >= 0) {
+			tempHexNumber[j] = remainder[i];
+			i--;
+			j++;
 		}
 
-		if (operator.equals("3")) {
-			result = cal.mul();
-			System.out.println(result);
-		}
+		String hexNumber = new String(tempHexNumber, 0, tempHexNumber.length);
 
-		if (operator.equals("4")) {
-			result = cal.sub();
-			System.out.println(result);
-		}
-		
-		if (operator.equals("5")) {
-			String result1 = new String();
-			result1 = cal.toHex();
-			System.out.println(result1);
-		}
-		
+		return hexNumber;
 
 	}
-	
 
 }
