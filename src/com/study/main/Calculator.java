@@ -35,7 +35,7 @@ public class Calculator {
 			result = cal.sub(num1, num2);
 			System.out.println(result);
 		}
-
+		
 
 	}
 	
