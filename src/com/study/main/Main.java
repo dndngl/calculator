@@ -38,22 +38,22 @@ public class Main {
 
 			int result = 0;
 
-			if (operator.equals("1")) {
+			if ("1".equals(operator)) {
 				result = cal.add(num1, num2);
 				System.out.println(result);
 			}
 
-			if (operator.equals("2")) {
+			if ("2".equals(operator)) {
 				result = cal.sub(num1, num2);
 				System.out.println(result);
 			}
 
-			if (operator.equals("3")) {
+			if ("3".equals(operator)) {
 				result = cal.mul(num1, num2);
 				System.out.println(result);
 			}
 
-			if (operator.equals("4")) {
+			if ("4".equals(operator)) {
 				result = cal.sub(num1, num2);
 				System.out.println(result);
 			}
