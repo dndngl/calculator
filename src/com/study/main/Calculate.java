@@ -45,48 +45,48 @@ public class Calculate {
 
 		int decNumber = scan.nextInt();
 
-		char tempHexNumber[] = new char[20];
-		char remainder1[] = new char[20];
+		char tempHexNumber[] = new char[50];
 		int qoutient = 1;
-		char remainder;
+		char remainder[] = new char[50];
 		int i = 0;
 		int j = 0;
 
-		while (qoutient > 0) {
+		for(;qoutient > 0;i++) {
 			qoutient = decNumber / 16;
-			remainder = (char) (decNumber - 16 * qoutient);
+			remainder[i] =  Character.forDigit(decNumber % 16, 10);
 
-			switch (remainder) {
+			switch (remainder[i]) {
 
-			case 10:
-				remainder1[i] = 'A';
+			case 10 : 
+				remainder[i] = 'A'; 
 				break;
 			case 11:
-				remainder1[i] = 'B';
+				remainder[i] = 'B';
 				break;
 			case 12:
-				remainder1[i] = 'C';
+				remainder[i] = 'C';
 				break;
 			case 13:
-				remainder1[i] = 'D';
+				remainder[i] = 'D';
 				break;
 			case 14:
-				remainder1[i] = 'E';
+				remainder[i] = 'E';
 				break;
 			case 15:
-				remainder1[i] = 'F';
+				remainder[i] = 'F';
 				break;
 			default:
 				break;
 			}
+			
+			decNumber=qoutient;
 
-			i++;
 		}
 
 		i = i - 1;
 
 		while (i >= 0) {
-			tempHexNumber[j] = remainder1[i];
+			tempHexNumber[j] = remainder[i];
 			i--;
 			j++;
 		}
